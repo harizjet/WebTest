@@ -1,45 +1,36 @@
 <template>
-  <div>
-    {{ todos }}
-  </div>
+  <Header />
+  <router-view />
 </template>
 
 <script>
+  import Header from "./components/layout/Header";
   export default {
     name: "App",
-    components: {},
-    data() {
-      return {
-        todos: [
-          {
-            id: 1,
-            title: "todo one",
-            completed: false,
-          },
-          {
-            id: 2,
-            title: "todo two",
-            completed: true,
-          },
-          {
-            id: 3,
-            title: "todo third",
-            completed: false,
-          },
-        ],
-      };
+    components: {
+      Header,
     },
   };
 </script>
-
 <style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
   }
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.4;
+
+  nav {
+    padding: 30px;
+  }
+
+  nav a {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  nav a.router-link-exact-active {
+    color: #42b983;
   }
 </style>
